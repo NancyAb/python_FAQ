@@ -22,3 +22,4 @@ left_df.merge(right_df, on='user_id', how='left')
 
 df.drop(columns=['B', 'C'])
 
+df[colname].value_counts()
