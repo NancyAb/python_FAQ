@@ -18,3 +18,5 @@ df['CODE'].value_counts()
 df_with_counts = df.groupby(y_col).id.transform('count')
         
  
+left_df.merge(right_df, on='user_id', how='left')
+
