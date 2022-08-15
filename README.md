@@ -9,7 +9,9 @@ df.groupby(group_col_list).rowid.transform('nunique')
 
 df['CODE'].value_counts()
 
-## calculated agg for each group to form a single summary value. You can do this agg in several ways by using DataFrame.aggregate(), Series.aggregate(), DataFrameGroupBy.aggregate().
+## calculated agg for each group to form a single summary value. 
+
+You can do this agg in several ways by using DataFrame.aggregate(), Series.aggregate(), DataFrameGroupBy.aggregate().
  
  
  df2 = df1.groupby('target').apply(meanofTargets)
@@ -24,3 +26,11 @@ left_df.merge(right_df, on='user_id', how='left')
 df.drop(columns=['B', 'C'])
 
 df[colname].value_counts()
+
+# index on primary key advantages
+
+https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-more-efficient-in-pandas
+
+Indicates merging on an index speeds up the join 3.5 times
+
+
