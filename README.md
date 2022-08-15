@@ -25,7 +25,7 @@ df.groupby(group_col_list).rowid.transform('nunique')
 
 ### Quick analysis of categories
 
-df['CODE'].value_counts()
+df[colname].value_counts()
 
 ## Joins
 
@@ -33,9 +33,10 @@ df['CODE'].value_counts()
  
 left_df.merge(right_df, on='user_id', how='left')
 
-df.drop(columns=['B', 'C'])
+## Pandas Maintenance
 
-df[colname].value_counts()
+df.drop(columns=['B', 'C'], inplace = True)
+df.rename(columns={"A": "a", "B": "c"}, inplace = True)
 
 ## index on primary key advantages
 
