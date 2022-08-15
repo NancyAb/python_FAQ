@@ -9,7 +9,7 @@ df.groupby(group_col_list).rowid.transform('nunique')
 
 df['CODE'].value_counts()
 
- calculated agg for each group to form a single summary value. You can do this agg in several ways by using DataFrame.aggregate(), Series.aggregate(), DataFrameGroupBy.aggregate().
+## calculated agg for each group to form a single summary value. You can do this agg in several ways by using DataFrame.aggregate(), Series.aggregate(), DataFrameGroupBy.aggregate().
  
  
  df2 = df1.groupby('target').apply(meanofTargets)
@@ -17,7 +17,7 @@ df['CODE'].value_counts()
 
 df_with_counts = df.groupby(y_col).id.transform('count')
 
-** To join one dataframe with another use merge
+## To join one dataframe with another use merge
  
 left_df.merge(right_df, on='user_id', how='left')
 
