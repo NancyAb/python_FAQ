@@ -1,31 +1,35 @@
 # python_FAQ
 
+I have a database background and code machine learning pipelines. I tend to see solutions with data first to find the optimal solution in SQL or Python. I will push the data conformance as close as possible to the source so that the data runs as clean as possible through the pipeline.
+
 ## Terminology
 
-- attribute is a variable that is a class property
-- method is a function stored in an instance or class 
+- **attribute** is a variable that is a class property
+- **method** is a function stored in an instance or class 
 
 ## Aggregation
 
 results summarize with only the distinct values 
 
-df.groupby(group_col_list).rowid.transform('nunique')
-
-and other times I want a value on the existing table.
-
-df['CODE'].value_counts()
-
-## calculated agg for each group to form a single summary value. 
+### calculated agg for each group to form a single summary value. 
 
 You can do this agg in several ways by using DataFrame.aggregate(), Series.aggregate(), DataFrameGroupBy.aggregate().
  
- 
- df2 = df1.groupby('target').apply(meanofTargets)
-
+df2 = df1.groupby('target').apply(meanofTargets)
 
 df_with_counts = df.groupby(y_col).id.transform('count')
 
-## To join one dataframe with another use merge
+and other times I want a value on the existing table.
+
+df.groupby(group_col_list).rowid.transform('nunique')
+
+### Quick analysis of categories
+
+df['CODE'].value_counts()
+
+## Joins
+
+### To join one dataframe with another use merge
  
 left_df.merge(right_df, on='user_id', how='left')
 
@@ -33,10 +37,11 @@ df.drop(columns=['B', 'C'])
 
 df[colname].value_counts()
 
-# index on primary key advantages
+## index on primary key advantages
 
 https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-more-efficient-in-pandas
 
-Indicates merging on an index speeds up the join 3.5 times
+- Indicates merging on an index speeds up the join 3.5 times
+- Easy updates defaults to index
 
 
