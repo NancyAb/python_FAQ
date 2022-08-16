@@ -36,7 +36,6 @@ left_df.merge(right_df, on='user_id', how='left')
 ## Pandas Dataframe Column Methods
 
 - df.**drop**(columns=['B', 'C'], inplace = True)
-
 - df.**rename**(columns={"A": "a", "B": "c"}, inplace = True)
 
 ## index on primary key advantages
