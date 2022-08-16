@@ -49,4 +49,7 @@ https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-m
 - Indicates merging on an index speeds up the join 3.5 times
 - Easy updates defaults to index
 
+## Dates
 
+
+df['Days'] = (df['Last_Date'] - df['Earlier Date']).dt.days
