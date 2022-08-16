@@ -51,16 +51,16 @@ https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-m
 
 ## Dates
 
-df[datetimes] = pd.to_datetime(df[datetimes])
-df['Days'] = (df['Last_Date'] - df['Earlier Date']).dt.days
+- df[datetimes] = pd.to_datetime(df[datetimes])
+- df['Days'] = (df['Last_Date'] - df['Earlier Date']).dt.days
 
 # MS Excel 
 
-excel_start_date = date(1899, 12, 30)
+- excel_start_date = date(1899, 12, 30)
 
 - remove time from all datetime columns and fix excel formatting bug that prevents date alignment
     
-df[datetimes] = pd.to_datetime(df[datetimes]).dt.date
-df[datetimes] = df[datetimes] - excel_start_date
-df[datetimes] = df[datetimes].dt.days
+- df[datetimes] = pd.to_datetime(df[datetimes]).dt.date
+- df[datetimes] = df[datetimes] - excel_start_date
+- df[datetimes] = df[datetimes].dt.days
    
