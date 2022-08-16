@@ -23,9 +23,10 @@ and other times I want a value on the existing table.
 
 df.groupby(group_col_list).rowid.transform('nunique')
 
-### Quick analysis of categories
+### Quick Analysis Methods
 
-df[colname].value_counts()
+- df[colname].value_counts()
+- df[colname].describe()
 
 ## Joins
 
@@ -53,6 +54,7 @@ https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-m
 
 - df[datetimes] = pd.to_datetime(df[datetimes])
 - df['Days'] = (df['Last_Date'] - df['Earlier Date']).dt.days
+- df['New Date'] =  df['Earlier Date'] + pd.**DateOffset**(days=180)
 
 # MS Excel 
 
