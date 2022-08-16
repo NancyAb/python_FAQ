@@ -33,11 +33,11 @@ df[colname].value_counts()
  
 left_df.merge(right_df, on='user_id', how='left')
 
-## Pandas Maintenance
+## Pandas Dataframe Column Methods
 
-df.drop(columns=['B', 'C'], inplace = True)
+- df.**drop**(columns=['B', 'C'], inplace = True)
 
-df.rename(columns={"A": "a", "B": "c"}, inplace = True)
+- df.**rename**(columns={"A": "a", "B": "c"}, inplace = True)
 
 ## index on primary key advantages
 
