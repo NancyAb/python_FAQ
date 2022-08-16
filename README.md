@@ -37,6 +37,9 @@ left_df.merge(right_df, on='user_id', how='left')
 
 - df.**drop**(columns=['B', 'C'], inplace = True)
 - df.**rename**(columns={"A": "a", "B": "c"}, inplace = True)
+- df.**reset_index**(drop=True, inplace=True)
+- df.**set_index**('column_name', inplace=True)
+- df.**set_index**(['column_name_1', column_name_2], inplace = True)
 
 ## index on primary key advantages
 
