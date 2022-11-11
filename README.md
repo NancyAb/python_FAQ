@@ -7,7 +7,7 @@ I have a database background and code machine learning pipelines. I tend to see 
 - **attribute** is a variable that is a class property
 - **method** is a function stored in an instance or class 
 
-## Aggregation
+## Aggregation Summary
 
 results summarize with only the distinct values 
 
@@ -19,7 +19,9 @@ df2 = df1.groupby('target').apply(meanofTargets)
 
 df_with_counts = df.groupby(y_col).id.transform('count')
 
-and other times I want a value on the existing table.
+## Aggregation on existing table 
+
+Transform creates a value for each row in the Pandas dataframe
 
 df.groupby(group_col_list).rowid.transform('nunique')
 
@@ -55,6 +57,18 @@ https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-m
 - df[datetimes] = pd.to_datetime(df[datetimes])
 - df['Days'] = (df['Last_Date'] - df['Earlier Date']).dt.days
 - df['New Date'] =  df['Earlier Date'] + pd.**DateOffset**(days=180)
+
+## Distinct Values
+
+.unique() returns a list
+.nunique() returns number of unique values
+
+## Working with Nulls
+
+### Counting nulls
+
+# total NaN values in column 'B'
+print(data['B'].isnull().sum())
 
 # MS Excel 
 
