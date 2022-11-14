@@ -70,6 +70,18 @@ https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-m
 # total NaN values in column 'B'
 print(data['B'].isnull().sum())
 
+.count() returns count of non-null values
+
+# total null values in the dataframe
+
+df.isnull().sum().sum()
+
+# Jupyter Notebook
+
+See all the columns and not be limited by width for seeing a pandas dataframe
+
+pd.set_option('display.max_colwidth', -1)
+
 # MS Excel 
 
 - excel_start_date = date(1899, 12, 30)
