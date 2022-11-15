@@ -30,7 +30,7 @@ df2 = df1.groupby('target').apply(meanofTargets)
 
 df_with_counts = df.groupby(y_col).id.transform('count')
 
-## Aggregation on existing table 
+### Aggregation on existing table 
 
 Transform creates a value for each row in the Pandas dataframe
 
@@ -41,11 +41,12 @@ df.groupby(group_col_list).rowid.transform('nunique')
 - df[colname].value_counts()
 - df[colname].describe()
 
-## Joins
-
 ### To join one dataframe with another use merge
 
 - join types 'left', 'right', 'outer', 'inner'
+- 'inner' default
+- need to specify which column to join on
+- 
  
 left_df.merge(right_df, on='user_id', how='left') 
 
