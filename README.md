@@ -50,7 +50,7 @@ df.groupby(group_col_list).rowid.transform('nunique')
  
 left_df.merge(right_df, on='user_id', how='left') 
 
-## Pandas Dataframe Column Methods
+### Pandas Dataframe Column Methods
 
 - df.**drop**(columns=['B', 'C'], inplace = True)
 - df.**rename**(columns={"A": "a", "B": "c"}, inplace = True)
@@ -61,27 +61,25 @@ left_df.merge(right_df, on='user_id', how='left')
 - df.index.names = ['index']  (renames index)
 - df.columns.names = ['column'] (for naming multilayered dataframes)
 
-## index on primary key advantages
+### index on primary key advantages
 
 https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-more-efficient-in-pandas
 
 - Indicates merging on an index speeds up the join 3.5 times
 - Easy updates defaults to index
 
-## Dates
+### Dates
 
 - df[datetimes] = pd.to_datetime(df[datetimes])
 - df['Days'] = (df['Last_Date'] - df['Earlier Date']).dt.days
 - df['New Date'] =  df['Earlier Date'] + pd.**DateOffset**(days=180)
 
-## Distinct Values
+### Distinct Values
 
 .unique() returns a list
 .nunique() returns number of unique values
 
 ### Working with Nulls
-
-#### Counting nulls
 
 - total NaN values in column 'B'
 
