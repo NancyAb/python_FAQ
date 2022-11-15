@@ -7,7 +7,18 @@ I have a database background and code machine learning pipelines. I tend to see 
 - **attribute** is a variable that is a class property
 - **method** is a function stored in an instance or class 
 
-## Aggregation Summary
+## Dictionary
+
+for key, value in a_dict.items():
+     print(key, '->', value)
+     
+## Lists
+
+## Sets
+
+## Pandas
+
+### Aggregation Summary
 
 results summarize with only the distinct values 
 
@@ -33,8 +44,10 @@ df.groupby(group_col_list).rowid.transform('nunique')
 ## Joins
 
 ### To join one dataframe with another use merge
+
+- join types 'left', 'right', 'outer', 'inner'
  
-left_df.merge(right_df, on='user_id', how='left')
+left_df.merge(right_df, on='user_id', how='left') 
 
 ## Pandas Dataframe Column Methods
 
@@ -44,6 +57,8 @@ left_df.merge(right_df, on='user_id', how='left')
 - df.**set_index**('column_name', inplace=True)
 - df.**set_index**(['column_name_1', column_name_2], inplace = True)
 - df[c] = df[c].**fillna**(-1)
+- df.index.names = ['index']  (renames index)
+- df.columns.names = ['column'] (for naming multilayered dataframes)
 
 ## index on primary key advantages
 
@@ -63,26 +78,27 @@ https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-m
 .unique() returns a list
 .nunique() returns number of unique values
 
-## Working with Nulls
+### Working with Nulls
 
-### Counting nulls
+#### Counting nulls
 
-# total NaN values in column 'B'
+- total NaN values in column 'B'
+
 print(data['B'].isnull().sum())
 
 .count() returns count of non-null values
 
-# total null values in the dataframe
+- total null values in the dataframe
 
 df.isnull().sum().sum()
 
-# Jupyter Notebook
+## Jupyter Notebook
 
 See all the columns and not be limited by width for seeing a pandas dataframe
 
 pd.set_option('display.max_colwidth', -1)
 
-# MS Excel 
+## MS Excel 
 
 - excel_start_date = date(1899, 12, 30)
 
