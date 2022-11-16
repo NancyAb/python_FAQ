@@ -28,13 +28,12 @@ You can do this agg in several ways by using DataFrame.aggregate(), Series.aggre
  
 df2 = df1.groupby('target').apply(meanofTargets)
 
-df_with_counts = df.groupby(y_col).id.transform('count')
-
 ### Aggregation on existing table 
 
 Transform creates a value for each row in the Pandas dataframe
 
 df.groupby(group_col_list).rowid.transform('nunique')
+df_with_counts = df.groupby(y_col).id.transform('count')
 
 ### Quick Analysis Methods
 
