@@ -27,6 +27,12 @@ results summarize with only the distinct values
 You can do this agg in several ways by using DataFrame.aggregate(), Series.aggregate(), DataFrameGroupBy.aggregate().
  
 df2 = df1.groupby('target').apply(meanofTargets)
+grouped_multiple = df.groupby(['start_name','end_name'])
+avg = grouped_multiple['duration'].mean()
+
+or chain together
+
+df.groupby(['start_name','end_name']).'duration'.mean()
 
 ### Aggregation on existing table 
 
