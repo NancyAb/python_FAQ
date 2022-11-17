@@ -20,7 +20,8 @@ for key, value in a_dict.items():
 
 ### lambda
 
-#create a new column
+- create a new column
+
 import re
 df['num_words'] = df.apply(lambda x : len(re.findall(r'\w+', x['body'])),axis=1)
 
