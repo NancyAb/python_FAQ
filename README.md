@@ -18,6 +18,12 @@ for key, value in a_dict.items():
 
 ## Pandas
 
+### lambda
+
+#create a new column
+import re
+df['num_words'] = df.apply(lambda x : len(re.findall(r'\w+', x['body'])),axis=1)
+
 ### Aggregation Summary
 
 results summarize with only the distinct values 
