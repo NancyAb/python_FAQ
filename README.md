@@ -109,7 +109,9 @@ df.isnull().sum().sum()
 
 See all the columns and not be limited by width for seeing a pandas dataframe
 
-pd.set_option('display.max_colwidth', -1)
+pd.set_option('display.max_colwidth', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows',20)
 
 ## MS Excel 
 
