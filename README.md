@@ -52,6 +52,8 @@ df_with_counts = df.groupby(y_col).id.transform('count')
 
 - df[colname].value_counts()
 - df[colname].describe()
+- df[colname].plot(kind = 'hist', bins = 20) (for continuous)
+- df[colname].plot(kind = 'bar') (for categorical)
 
 ### To join one dataframe with another use merge
 
