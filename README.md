@@ -123,3 +123,15 @@ pd.set_option('display.max_rows',20)
 - df[datetimes] = df[datetimes] - excel_start_date
 - df[datetimes] = df[datetimes].dt.days
    
+# text
+
+- display \n as return line in Vim
+
+https://stackoverflow.com/questions/71323/how-to-replace-a-character-by-a-newline-in-vim
+
+:set magic
+:s/\\n/^M/g
+
+Under Windows, do Ctrl + Q, and Enter.
+
+To get the ^M character, type Ctrl + V and hit Enter on other systems
