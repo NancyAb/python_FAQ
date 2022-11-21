@@ -133,6 +133,6 @@ https://stackoverflow.com/questions/71323/how-to-replace-a-character-by-a-newlin
 
 :s/\\n/^M/g
 
-Under Windows, do Ctrl + Q, and Enter.
+To get the ^M character, Under Windows, do Ctrl + Q, and Enter.
 
-To get the ^M character, type Ctrl + V and hit Enter on other systems
+type Ctrl + V and hit Enter on other systems
