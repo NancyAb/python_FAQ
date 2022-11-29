@@ -133,6 +133,8 @@ https://stackoverflow.com/questions/71323/how-to-replace-a-character-by-a-newlin
 
 :1,$s/\\\n/^M/g
 
+The "\n" character must have "\\n" to escape out the special character
+
 To get the ^M character, Under Windows, do Ctrl + Q, and Enter.
 
 type Ctrl + V and hit Enter on other systems
