@@ -74,6 +74,7 @@ left_df.merge(right_df, on='user_id', how='left')
 - df[c] = df[c].**fillna**(-1)
 - df.index.names = ['index']  (renames index)
 - df.columns.names = ['column'] (for naming multilayered dataframes)
+- df.sort_values(by='col1', ascending=False)
 
 ### index on primary key advantages
 
