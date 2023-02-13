@@ -52,6 +52,13 @@ df.groupby(group_col_list).rowid.transform('nunique')
 
 df_with_counts = df.groupby(y_col).id.transform('count')
 
+### Multiple aggregations
+
+df.groupby('class')['sepal length (cm)'].agg(
+    sepal_average_length='mean',
+    sepal_standard_deviation='std'
+)
+
 ### Quick Analysis Methods
 
 - df[colname].value_counts()
