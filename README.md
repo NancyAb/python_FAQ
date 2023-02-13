@@ -52,11 +52,19 @@ df.groupby(group_col_list).rowid.transform('nunique')
 
 df_with_counts = df.groupby(y_col).id.transform('count')
 
-### Multiple aggregations
+### Multiple aggregations pandas groupby multiple aggregations on different columns
 
 df.groupby('class')['sepal length (cm)'].agg(
     sepal_average_length='mean',
     sepal_standard_deviation='std'
+)
+
+df.groupby('group').agg(
+             a_sum=('a', 'sum'),
+             a_mean=('a', 'mean'),
+             b_mean=('b', 'mean'),
+             c_sum=('c', 'sum'),
+             d_range=('d', lambda x: x.max() - x.min())
 )
 
 ### Quick Analysis Methods
