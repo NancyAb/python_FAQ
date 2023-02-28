@@ -60,12 +60,26 @@ df.groupby('class')['sepal length (cm)'].agg(
 )
 
 df.groupby('group').agg(
-             a_sum=('a', 'sum'),
-             a_mean=('a', 'mean'),
-             b_mean=('b', 'mean'),
-             c_sum=('c', 'sum'),
-             d_range=('d', lambda x: x.max() - x.min())
+ 
+                               a_sum=('a', 'sum'),
+
+                              a_mean=('a', 'mean'),
+
+                              b_mean=('b', 'mean'),
+
+                              c_sum=('c', 'sum'),
+
+                              d_range=('d', lambda x: x.max() - x.min())
+
 )
+
+
+data_df.groupby('external').agg( count= ('external','count'),
+
+                                 min_pub = ('publication_date', 'min') ,
+ 
+                                  max_pub = ('publication_date', 'max') ).reset_index()
+
 
 ### Quick Analysis Methods
 
