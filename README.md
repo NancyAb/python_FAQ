@@ -121,6 +121,7 @@ https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-m
 - df[datetimes] = pd.to_datetime(df[datetimes])
 - df['Days'] = (df['Last_Date'] - df['Earlier Date']).dt.days
 - df['New Date'] =  df['Earlier Date'] + pd.**DateOffset**(days=180)
+- dataframe['Date with time'] = pd.to_datetime(dataframe['Date with time']).dt.date  # datetime to date in pandas
 
 ### Distinct Values
 
