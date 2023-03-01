@@ -118,6 +118,10 @@ https://stackoverflow.com/questions/50970859/merging-dataframes-on-an-index-is-m
 
 ### Dates
 
+#### Make sure not 'object' but datetime
+
+- dataframe['Date with time'] = dataframe['Date with time'].astype('datetime64[ns]') # converts from object to datetime
+
 - df[datetimes] = pd.to_datetime(df[datetimes])
 - df['Days'] = (df['Last_Date'] - df['Earlier Date']).dt.days
 - df['New Date'] =  df['Earlier Date'] + pd.**DateOffset**(days=180)
