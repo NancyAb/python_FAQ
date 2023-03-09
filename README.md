@@ -93,9 +93,13 @@ data_df.groupby('external').agg( count= ('external','count'),
 - join types 'left', 'right', 'outer', 'inner'
 - 'inner' default
 - need to specify which column to join on
-- 
  
 left_df.merge(right_df, on='user_id', how='left') 
+
+### to stack one dataframe on top of another use concat
+
+- frames = [df1, df2, df3]
+- result = pd.concat(frames)
 
 ### Pandas Dataframe Column Methods
 
