@@ -167,6 +167,17 @@ pd.set_option('display.max_rows',20)
 - df[datetimes] = pd.to_datetime(df[datetimes]).dt.date
 - df[datetimes] = df[datetimes] - excel_start_date
 - df[datetimes] = df[datetimes].dt.days
+
+### MS Excel Working with files
+
+- MS Excel may not be able to work directly with csv files as it will often corrupt input if it contains apostrophes within columns
+- Pandas can successfully read csv files without this corruption
+- Pandas can write to MS Excel on if the libary is installed using df.to_excel()
+
+```
+$ pip install xlwt
+$ pip install openpyxl
+```
    
 # text
 
