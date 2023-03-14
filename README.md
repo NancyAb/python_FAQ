@@ -196,9 +196,10 @@ $ pip install openpyxl
 
 https://stackoverflow.com/questions/71323/how-to-replace-a-character-by-a-newline-in-vim
 
+```
 :set magic
-
-:1,$s/\\\n/^M/g
+:1,$s/\\n/^M/g
+```
 
 The "\n" character must have "\\\n" to escape out the special character
 
