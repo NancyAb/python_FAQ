@@ -181,6 +181,7 @@ pd.set_option('display.max_rows',20)
 ```python
 import openpyxl
 df.to_excel(filename + '.xlsx')
+df = pd.read_excel(filename + '.xlsx') # this needs to have xlwt installed
 ```
 
 - To install openpxl
