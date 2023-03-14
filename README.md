@@ -178,6 +178,13 @@ pd.set_option('display.max_rows',20)
 - Pandas can successfully read csv files without this corruption
 - Pandas can write to MS Excel on if the libary is installed using df.to_excel()
 
+```python
+import openpyxl
+df.to_excel(filename + '.xlsx')
+```
+
+- To install openpxl
+
 ```
 $ pip install xlwt
 $ pip install openpyxl
