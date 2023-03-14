@@ -9,9 +9,11 @@ I have a database background and code machine learning pipelines. I tend to see 
 
 ## Dictionary
 
+```python
 for key, value in a_dict.items():
      print(key, '->', value)
-     
+```
+
 ## Lists
 
 ## Sets
@@ -22,9 +24,11 @@ for key, value in a_dict.items():
 
 - create a new column
 
+```python
 import re
 
 df['num_words'] = df.apply(lambda x : len(re.findall(r'\w+', x['body'])),axis=1)
+```
 
 ### Aggregation Summary
 
@@ -33,73 +37,71 @@ results summarize with only the distinct values
 ### calculated agg for each group to form a single summary value. 
 
 You can do this agg in several ways by using DataFrame.aggregate(), Series.aggregate(), DataFrameGroupBy.aggregate().
- 
+
+```python
 df2 = df1.groupby('target').apply(meanofTargets)
-
 grouped_multiple = df.groupby(['start_name','end_name'])
-
 avg = grouped_multiple['duration'].mean()
+```
 
 or chain together
 
+```python
 df.groupby(['start_name','end_name']).'duration'.mean()
+```
 
 ### Aggregation on existing table 
 
 Transform creates a value for each row in the Pandas dataframe
 
+```python
 df.groupby(group_col_list).rowid.transform('nunique')
-
 df_with_counts = df.groupby(y_col).id.transform('count')
+```
 
 ### Multiple aggregations pandas groupby multiple aggregations on different columns
 
+```pythong
 df.groupby('class')['sepal length (cm)'].agg(
     sepal_average_length='mean',
     sepal_standard_deviation='std'
 )
 
-df.groupby('group').agg(
- 
-                               a_sum=('a', 'sum'),
-
-                              a_mean=('a', 'mean'),
-
-                              b_mean=('b', 'mean'),
-
-                              c_sum=('c', 'sum'),
-
-                              d_range=('d', lambda x: x.max() - x.min())
-
-)
-
+df.groupby('group').agg( a_sum=('a', 'sum'),
+                         a_mean=('a', 'mean'),b_mean=('b', 'mean'),
+                         c_sum=('c', 'sum'),
+                         d_range=('d', lambda x: x.max() - x.min()))
 
 data_df.groupby('external').agg( count= ('external','count'),
-
                                  min_pub = ('publication_date', 'min') ,
- 
-                                  max_pub = ('publication_date', 'max') ).reset_index()
-
+                                 max_pub = ('publication_date', 'max') ).reset_index()
+```
 
 ### Quick Analysis Methods
 
-- df[colname].value_counts()
-- df[colname].describe()
-- df[colname].plot(kind = 'hist', bins = 20) (for continuous)
-- df[colname].value_counts().plot(kind = 'bar') (for categorical)
+```python
+df[colname].value_counts()
+df[colname].describe()
+df[colname].plot(kind = 'hist', bins = 20) (for continuous)
+df[colname].value_counts().plot(kind = 'bar') (for categorical)
+```
 
 ### To join one dataframe with another use merge
 
 - join types 'left', 'right', 'outer', 'inner'
-- 'inner' default
-- need to specify which column to join on
- 
+     - 'inner' default
+     - need to specify which column to join on
+
+```python
 left_df.merge(right_df, on='user_id', how='left') 
+```
 
 ### to stack one dataframe on top of another use concat
 
-- frames = [df1, df2, df3]
-- result = pd.concat(frames)
+```python
+frames = [df1, df2, df3]
+result = pd.concat(frames)
+```
 
 ### Pandas Dataframe Column Methods
 
