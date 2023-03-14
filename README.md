@@ -61,7 +61,7 @@ df_with_counts = df.groupby(y_col).id.transform('count')
 
 ### Multiple aggregations pandas groupby multiple aggregations on different columns
 
-```pythong
+```python
 df.groupby('class')['sepal length (cm)'].agg(
     sepal_average_length='mean',
     sepal_standard_deviation='std'
@@ -105,15 +105,17 @@ result = pd.concat(frames)
 
 ### Pandas Dataframe Column Methods
 
-- df.**drop**(columns=['B', 'C'], inplace = True)
-- df.**rename**(columns={"A": "a", "B": "c"}, inplace = True)
-- df.**reset_index**(drop=True, inplace=True)
-- df.**set_index**('column_name', inplace=True)
-- df.**set_index**(['column_name_1', column_name_2], inplace = True)
-- df[c] = df[c].**fillna**(-1)
-- df.index.names = ['index']  (renames index)
-- df.columns.names = ['column'] (for naming multilayered dataframes)
-- df.sort_values(by='col1', ascending=False)
+```python
+df.drop(columns=['B', 'C'], inplace = True)
+df.rename(columns={"A": "a", "B": "c"}, inplace = True)
+df.reset_index(drop=True, inplace=True)
+df.set_index('column_name', inplace=True)
+df.set_index(['column_name_1', column_name_2], inplace = True)
+df[c] = df[c].fillna(-1)
+df.index.names = ['index']  (renames index)
+df.columns.names = ['column'] (for naming multilayered dataframes)
+df.sort_values(by='col1', ascending=False)
+```
 
 ### index on primary key advantages
 
