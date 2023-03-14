@@ -94,6 +94,8 @@ df[colname].value_counts().plot(kind = 'bar') (for categorical)
 
 ```python
 left_df.merge(right_df, on='user_id', how='left') 
+left_df.merge(right_df, left_on='user_id', right_on = 'id', how='left') 
+left_df.merge(right_df, left_index=True, right_index=True, how='left')
 ```
 
 ### to stack one dataframe on top of another use concat
