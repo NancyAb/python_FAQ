@@ -10,6 +10,8 @@ I have a database background and code machine learning pipelines. I tend to see 
 ## Dictionary
 
 ```python
+dict = { 1:"integer", 2.03:"Decimal", "Dog":"Scooter"}
+
 for key, value in a_dict.items():
      print(key, '->', value)
 ```
