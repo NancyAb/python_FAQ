@@ -1,3 +1,21 @@
+# SQL
+delete duplicates without ids
+
+```sql
+delete from article_tag
+where ctid in 
+(
+WITH CTE 
+AS (select ctid, article_id, 
+           tag_id ,
+           ROW_NUMBER() OVER(PARTITION BY article_id, 
+                                          tag_id
+           ORDER BY id) AS DuplicateCount
+    FROM article_tag)
+select ctid FROM CTE where duplicatecount > 1 )
+```
+
+
 # python_FAQ
 
 I have a database background and code machine learning pipelines. I tend to see solutions with data first to find the optimal solution in SQL or Python. I will push the data conformance as close as possible to the source so that the data runs as clean as possible through the pipeline.
