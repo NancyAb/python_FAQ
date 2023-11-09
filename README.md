@@ -1,5 +1,5 @@
 # SQL
-delete duplicates without ids
+## delete duplicates without ids
 
 ```sql
 delete from article_tag
@@ -15,6 +15,21 @@ AS (select ctid, article_id,
 select ctid FROM CTE where duplicatecount > 1 )
 ```
 
+## Partition to Find the top row 
+
+```sql
+select * 
+from earning_transcripts  
+where
+ id in 
+(
+WITH CTE 
+AS (select id, company_id , headline , story_date, story_time,
+           ROW_NUMBER() OVER(PARTITION BY company_id, headline
+                             ORDER BY story_date desc, story_time desc) AS latest_report
+    FROM earning_transcripts )
+select id FROM CTE where latest_report=1 )
+```
 
 # python_FAQ
 
