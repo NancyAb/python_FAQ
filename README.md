@@ -1,3 +1,36 @@
+# GenAI
+## Prompt Building Tips
+### Clean up data before processing
+
+json cleaning code to reduce tokens and increase signal.
+
+def clean_text(line):
+  try:
+    line = re.sub('\'','',line)
+    line = re.sub('\"','',line)
+    line = re.sub('href','link',line)
+    return(line)
+  except:
+    return(line)
+
+external_data = [clean_text(str(i)) for i in all_data_sets]  
+
+### Add json explicit description as notes
+
+**append** adds its argument as a _single_ element to the end of the list while **extend** adds the elements of the _iterable argument_ to the end of the list. If you use append to add multiple elements to the list, they will be added as a single list element.
+
+```python
+product_counts = 'Notes: This dataset represents the frequency at which different products appeared in the news for a give time frame\n' + str(product_counts) 
+
+company_counts = 'Notes: This dataset represents the frequency at which different companies appeared in the news for a give time frame\n' + str(company_counts)
+
+all_data_sets.extend(product_info_list)
+all_data_sets.append(product_counts)
+
+all_data_sets.append(company_counts)
+all_data_sets.extend(company_info_list)
+```
+
 # SQL
 ## delete duplicates without ids
 
