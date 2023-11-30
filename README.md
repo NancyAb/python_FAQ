@@ -4,6 +4,7 @@
 
 json cleaning code to reduce tokens and increase signal.
 
+```python
 def clean_text(line):
   try:
     line = re.sub('\'','',line)
@@ -13,7 +14,8 @@ def clean_text(line):
   except:
     return(line)
 
-external_data = [clean_text(str(i)) for i in all_data_sets]  
+external_data = [clean_text(str(i)) for i in all_data_sets]
+```
 
 ### Add json explicit description as notes
 
